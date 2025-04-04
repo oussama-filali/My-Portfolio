@@ -45,7 +45,6 @@ header nav ul li a:hover {
   color: #00ddeb;
 }
 
-/* Style pour le lien actif dans la navigation */
 header nav ul li a.active {
   color: #00ddeb;
   border-bottom: 2px solid #00ddeb;
@@ -74,11 +73,12 @@ header nav ul li a.active {
 .title-container {
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .title {
   color: #fff;
-  font-size: 48px;
+  font-size: clamp(32px, 6vw, 48px);
   font-weight: bold;
   letter-spacing: 2px;
   font-family: 'Pacifico', cursive;
@@ -92,12 +92,12 @@ header nav ul li a.active {
 
 @keyframes appear {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -109,7 +109,7 @@ header nav ul li a.active {
 
 .stars-container p {
   color: #fff;
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   z-index: 2;
 }
 
@@ -155,7 +155,7 @@ header nav ul li a.active {
 }
 
 .logo-container img {
-  width: 100px;
+  width: clamp(60px, 10vw, 100px);
   height: auto;
   margin: 0 20px;
 }
@@ -177,6 +177,7 @@ header nav ul li a.active {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .a-propos-text {
@@ -185,12 +186,12 @@ header nav ul li a.active {
 }
 
 .a-propos-text h2 {
-  font-size: 2.5em;
+  font-size: clamp(1.8em, 5vw, 2.5em);
   margin-bottom: 20px;
 }
 
 .a-propos-text p {
-  font-size: 1.2em;
+  font-size: clamp(1em, 3vw, 1.2em);
   line-height: 1.6;
 }
 
@@ -200,7 +201,7 @@ header nav ul li a.active {
 }
 
 .a-propos-image img {
-  width: 300px;
+  width: 300px; /* Taille par défaut sur desktop */
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
@@ -222,8 +223,8 @@ header nav ul li a.active {
 }
 
 .a-propos-image img:hover {
-  transform: scale(1.1); /* Zoom sur l'image */
-  box-shadow: 0 0 30px rgba(0, 221, 235, 0.7); /* Augmente l'ombre */
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 221, 235, 0.7);
 }
 
 /* Section Projets */
@@ -234,7 +235,7 @@ header nav ul li a.active {
 
 #projets h2 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: clamp(1.8em, 5vw, 2.5em);
   margin-bottom: 40px;
 }
 
@@ -247,7 +248,7 @@ header nav ul li a.active {
 
 .project-card {
   flex: 0 0 auto;
-  width: 300px;
+  width: clamp(250px, 40vw, 300px);
   background-color: #1a1a1a;
   border-radius: 8px;
   padding: 20px;
@@ -269,12 +270,12 @@ header nav ul li a.active {
 }
 
 .project-card h3 {
-  font-size: 1.5em;
+  font-size: clamp(1.2em, 3vw, 1.5em);
   margin-bottom: 10px;
 }
 
 .project-card p {
-  font-size: 1em;
+  font-size: clamp(0.9em, 2.5vw, 1em);
   line-height: 1.4;
   margin-bottom: 15px;
 }
@@ -288,11 +289,11 @@ header nav ul li a.active {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: bold;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+ CUT transition: all 0.3s ease;
 }
 
 .glass-button:hover {
@@ -315,7 +316,7 @@ header nav ul li a.active {
 .footer-basic .social a {
   color: #fff;
   margin: 0 10px;
-  font-size: 1.5em;
+  font-size: clamp(1.2em, 3vw, 1.5em);
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -327,7 +328,7 @@ header nav ul li a.active {
 
 .footer-basic .copyright {
   margin-top: 20px;
-  font-size: 0.9em;
+  font-size: clamp(0.8em, 2vw, 0.9em);
 }
 
 /* Bouton Retour en haut */
@@ -336,4 +337,73 @@ header nav ul li a.active {
   bottom: 20px;
   right: 20px;
   display: none;
+}
+
+/* Media Queries pour le responsive */
+@media (max-width: 768px) {
+  /* Header */
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  /* Section À propos */
+  .a-propos-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .a-propos-text,
+  .a-propos-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .a-propos-image img {
+    width: 200px; /* Réduction pour tablettes */
+    height: 200px;
+  }
+
+  /* Carrousel */
+  .carousel-container {
+    height: 250px;
+  }
+
+  /* Projets */
+  .project-scroll-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Typographie */
+  .title {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .stars-container p {
+    font-size: clamp(14px, 4vw, 16px);
+  }
+
+  /* Section À propos - Réduction supplémentaire pour mobile */
+  .a-propos-image img {
+    width: 150px; /* Réduction pour petits écrans */
+    height: 150px;
+  }
+
+  /* Carrousel */
+  .carousel-container {
+    height: 200px;
+  }
+
+  /* Logos */
+  .logo-container img {
+    width: clamp(40px, 10vw, 60px);
+  }
 }
