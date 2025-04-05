@@ -151,7 +151,7 @@ header nav ul li a.active {
 
 .logo-container {
   display: flex;
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .logo-container img {
@@ -208,8 +208,8 @@ header nav ul li a.active {
   border: 5px solid #00ddeb;
   box-shadow: 0 0 20px rgba(0, 221, 235, 0.5);
   opacity: 0;
-  transform: scale(0.81);
-  transition: transform 1s ease, opacity 2s ease-in-out, box-shadow 0.3s ease;
+  transform: scale(0.8);
+  transition: transform 1s ease, opacity 1s ease-in-out;
 }
 
 .a-propos-image.visible img {
@@ -219,7 +219,7 @@ header nav ul li a.active {
 
 .a-propos-image.hidden img {
   opacity: 0;
-  transform: scale(0.81);
+  transform: scale(0.8);
 }
 
 .a-propos-image img:hover {
@@ -293,7 +293,7 @@ header nav ul li a.active {
   font-weight: bold;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
- CUT transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .glass-button:hover {
@@ -393,7 +393,7 @@ header nav ul li a.active {
 
   /* Section À propos - Réduction supplémentaire pour mobile */
   .a-propos-image img {
-    width: 150px; /* Réduction pour petits écrans */
+    width: 150px;
     height: 150px;
   }
 
@@ -406,4 +406,50 @@ header nav ul li a.active {
   .logo-container img {
     width: clamp(40px, 10vw, 60px);
   }
+}
+
+.timeline {
+  padding: 100px 20px;
+  background-color: #0a0a0a;
+  color: #fff;
+  text-align: center;
+}
+
+.timeline h2 {
+  font-size: clamp(1.8em, 5vw, 2.5em);
+  margin-bottom: 40px;
+  color: #00ddeb;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.experience-card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-left: 4px solid #00ddeb;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0, 221, 235, 0.1);
+  opacity: 0; /* Initialement invisible */
+  transform: translateY(50px); /* Position initiale */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Ajout d'une transition */
+}
+
+
+.experience-card.sticky {
+  position: sticky;
+  top: 20px; /* Ajustez selon vos besoins */
+}
+.p {
+  font-size: clamp(1em, 3vw, 1.2em);
+  line-height: 1.6;
+  margin-bottom: 10px;position: -ms-pages; /* Pour IE 10+ */
+
 }

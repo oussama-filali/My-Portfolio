@@ -68,30 +68,21 @@ gsap.from(".footer-basic", { scrollTrigger: { trigger: "footer", start: "top bot
 const boutonRetour = document.getElementById("back-to-top");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        boutonRetour.style.display = "block";
-    } else {
-        boutonRetour.style.display = "none";
-    }
+    boutonRetour.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
 boutonRetour.addEventListener("click", () => {
     gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2.inOut" });
 });
 
-// Animation fluide pour le bouton "Retour en haut"
-document.getElementById('back-to-top').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
 // Défilement automatique des images
-const images = document.querySelectorAll(".image-container img");
+const carouselImages = document.querySelectorAll(".image-container img");
 let indexActuel = 0;
 
 function afficherImageSuivante() {
-    images[indexActuel].classList.remove("active");
-    indexActuel = (indexActuel + 1) % images.length;
-    images[indexActuel].classList.add("active");
+    carouselImages[indexActuel].classList.remove("active");
+    indexActuel = (indexActuel + 1) % carouselImages.length;
+    carouselImages[indexActuel].classList.add("active");
 }
 
 setInterval(afficherImageSuivante, 3000);
@@ -119,21 +110,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Afficher le bouton lorsque l'utilisateur fait défiler vers le bas
-window.onscroll = function() {
-    var backToTopButton = document.getElementById("back-to-top");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopButton.style.display = "block";
-    } else {
-        backToTopButton.style.display = "none";
-    }
-};
-
-// Faire défiler vers le haut lorsque l'utilisateur clique sur le bouton
-document.getElementById("back-to-top").onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
 // Ajout de la classe active pour la navigation
 document.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
@@ -153,4 +129,50 @@ document.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+});
+
+// Détection de Firefox
+const isFirefox = typeof InstallTrigger !== 'undefined';
+
+if (!isFirefox) {
+    // Appliquer les animations uniquement si ce n'est pas Firefox
+    gsap.fromTo(".timeline .experience-card", 
+        { opacity: 0, y: 50 },
+        {
+            scrollTrigger: {
+                trigger: ".timeline .experience-card",
+                start: "top 80%",
+                scrub: true,
+                toggleActions: "play none none reverse"
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power4.out"
+        }
+    );
+}
+
+// Animation des cartes de la timeline
+gsap.utils.toArray(".timeline .experience-card").forEach((card, i) => {
+    console.log(`Animation déclenchée pour la carte ${i + 1}`); // Debug
+    gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 }, // Valeurs initiales
+        {
+            scrollTrigger: {
+                trigger: card,
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: i * 0.2,
+            ease: "power4.out",
+            onComplete: () => {
+                console.log(`Animation terminée pour la carte ${i + 1}`);
+            }
+        }
+    );
 });
