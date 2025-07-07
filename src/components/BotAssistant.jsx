@@ -17,32 +17,36 @@ const BotAssistant = ({ onNavigate }) => {
   const botResponses = {
     bio: {
       keywords: ['bio', 'biographie', 'présentation', 'qui est', 'à propos', 'profil'],
-      response: 'Oussama est un étudiant passionné en IT, spécialisé dans le développement web et mobile. Il maîtrise plusieurs technologies comme React, JavaScript, PHP, et bien plus ! 🚀',
+      response: 'Oussama est un étudiant en première année Bachelor IT à La Plateforme, fort d\'une expérience en vente et communication. Passionné par le développement web et mobile ! 🚀',
       action: () => onNavigate('about')
     },
     projets: {
       keywords: ['projet', 'réalisation', 'travaux', 'portfolio', 'création'],
-      response: 'Oussama a réalisé plusieurs projets impressionnants ! Du développement d\'applications web aux systèmes de gestion. Veux-tu les découvrir ? 💻',
+      response: 'Oussama a réalisé 7+ projets : Cuisine Up, L\'Artisan Pizzeria, site La Plateforme, Quiz interactif et bien d\'autres ! Veux-tu les découvrir ? 💻',
       action: () => onNavigate('projects')
     },
     experiences: {
-      keywords: ['expérience', 'stage', 'formation', 'parcours', 'études'],
-      response: 'Découvre le parcours professionnel et académique d\'Oussama, ses formations et ses expériences ! 🎓',
+      keywords: ['expérience', 'stage', 'formation', 'parcours', 'études', 'travail'],
+      response: 'Découvre son parcours : de Auto-Entrepreneur à Agent commercial chez INTELCIA, puis Chargé d\'affaire chez PHINELEC, et maintenant étudiant développeur ! 🎓',
       action: () => onNavigate('experience')
     },
     technologies: {
       keywords: ['technologie', 'langage', 'framework', 'compétence', 'skill'],
-      response: 'Oussama maîtrise de nombreuses technologies : React, JavaScript, PHP, Python, SQL, et bien d\'autres ! Veux-tu voir ses compétences ? ⚡',
-      action: () => onNavigate('skills')
+      response: 'Oussama maîtrise HTML/CSS, JavaScript, PHP, MySQL, React, GitHub et bien d\'autres ! Il apprend en continu à La Plateforme ! ⚡',
+      action: () => onNavigate('about')
     },
     contact: {
       keywords: ['contact', 'joindre', 'email', 'téléphone', 'linkedin'],
-      response: 'Tu veux contacter Oussama ? Je peux t\'emmener directement à sa section contact ! 📧',
+      response: 'Tu veux contacter Oussama ? LinkedIn, GitHub ou email : oussama.halimafilali.pro@gmail.com ! 📧',
       action: () => onNavigate('contact')
+    },
+    plateforme: {
+      keywords: ['plateforme', 'école', 'étudiant', 'formation', 'b1'],
+      response: 'Oussama étudie à La Plateforme en B1 Web ! Une école où l\'autonomie est primordiale. Il a vite intégré après la prépa ! 🎯'
     },
     salut: {
       keywords: ['salut', 'bonjour', 'hello', 'hey', 'coucou'],
-      response: 'Salut ! 😊 Ravi de te rencontrer ! Que veux-tu savoir sur Oussama et son travail ?'
+      response: 'Salut ! 😊 Ravi de te rencontrer ! Que veux-tu savoir sur Oussama et son parcours de développeur ?'
     }
   };
 

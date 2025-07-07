@@ -27,12 +27,12 @@ const About = () => {
   }, []);
 
   const skills = [
-    { name: 'React.js', level: 90, color: 'from-blue-500 to-cyan-500' },
-    { name: 'JavaScript', level: 85, color: 'from-yellow-500 to-orange-500' },
-    { name: 'PHP', level: 80, color: 'from-purple-500 to-pink-500' },
-    { name: 'Python', level: 75, color: 'from-green-500 to-blue-500' },
-    { name: 'SQL', level: 85, color: 'from-red-500 to-pink-500' },
-    { name: 'Node.js', level: 70, color: 'from-green-600 to-green-400' }
+    { name: 'HTML/CSS', level: 85, color: 'from-orange-500 to-red-500' },
+    { name: 'JavaScript', level: 80, color: 'from-yellow-500 to-orange-500' },
+    { name: 'PHP', level: 75, color: 'from-purple-500 to-pink-500' },
+    { name: 'MySQL', level: 70, color: 'from-blue-500 to-cyan-500' },
+    { name: 'React', level: 65, color: 'from-cyan-500 to-blue-500' },
+    { name: 'GitHub', level: 75, color: 'from-gray-600 to-gray-400' }
   ];
 
   const interests = [
@@ -96,16 +96,15 @@ const About = () => {
                 <span className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mr-3">
                   👨‍💻
                 </span>
-                Mon Histoire
+                BIENVENUE DANS MON PETIT MONDE
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Passionné par l'informatique depuis mon plus jeune âge, je me suis lancé dans le développement 
-                web et mobile avec une soif d'apprentissage qui ne s'éteint jamais. Chaque ligne de code est 
-                une opportunité de créer quelque chose d'extraordinaire.
+                <strong>Hello! 👋</strong>, je suis Oussama Halima-Filali, fort d'une expérience en vente et communication, 
+                étudiant en première année Bachelor IT à La Plateforme.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Actuellement étudiant en IT, je combine mes études théoriques avec une pratique intensive 
-                pour devenir un développeur polyvalent capable de relever tous les défis technologiques.
+                Passionné par le développement web et mobile, j'aspire à devenir un expert dans ce domaine. 
+                Explorez mon portfolio pour découvrir mes projets et mes réalisations.
               </p>
             </div>
 
@@ -160,20 +159,20 @@ const About = () => {
         }`}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <div className="text-3xl font-bold text-purple-400 mb-2">50+</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">7+</div>
               <div className="text-gray-300 text-sm">Projets réalisés</div>
             </div>
             <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <div className="text-3xl font-bold text-blue-400 mb-2">3+</div>
-              <div className="text-gray-300 text-sm">Années d'expérience</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">1+</div>
+              <div className="text-gray-300 text-sm">Année à La Plateforme</div>
             </div>
             <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <div className="text-3xl font-bold text-cyan-400 mb-2">10+</div>
+              <div className="text-3xl font-bold text-cyan-400 mb-2">6+</div>
               <div className="text-gray-300 text-sm">Technologies maîtrisées</div>
             </div>
             <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <div className="text-3xl font-bold text-green-400 mb-2">24/7</div>
-              <div className="text-gray-300 text-sm">Passion pour le code</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">5+</div>
+              <div className="text-gray-300 text-sm">Années d'expérience pro</div>
             </div>
           </div>
         </div>

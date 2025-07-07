@@ -9,42 +9,52 @@ const Experience = () => {
     {
       type: 'education',
       icon: FaGraduationCap,
-      title: 'Études en Informatique',
-      organization: 'La Plateforme_',
-      period: '2022 - Présent',
-      description: 'Formation complète en développement web et mobile, maîtrise des technologies modernes et méthodologies agiles.',
-      skills: ['HTML/CSS', 'JavaScript', 'React', 'PHP', 'Python', 'SQL'],
+      title: 'Développeur Web - Reconversion',
+      organization: 'École La Plateforme',
+      period: '2024',
+      description: 'Une école où l\'autonomie est primordiale grâce à une période de prépa j\'ai très vite intégré la section B1 web, où j\'ai rencontré bug, frustration, joie et du learning à gogo.',
+      skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'React', 'GitHub'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
       type: 'project',
       icon: FaBriefcase,
-      title: 'Développeur Full-Stack',
-      organization: 'Projets Personnels',
-      period: '2021 - Présent',
-      description: 'Création d\'applications web complètes, de la conception à la mise en production.',
-      skills: ['React.js', 'Node.js', 'MySQL', 'API REST'],
+      title: 'Chargé d\'affaire',
+      organization: 'PHINELEC',
+      period: '2023 - 2024',
+      description: 'Gestion des relations clients, suivi des interventions techniques, mise en place de stratégies de fidélisation.',
+      skills: ['Relation client', 'Suivi technique', 'Fidélisation'],
       color: 'from-purple-500 to-pink-500'
     },
     {
       type: 'achievement',
-      icon: FaTrophy,
-      title: 'Portfolio Interactif',
-      organization: 'Projet Principal',
-      period: '2024',
-      description: 'Développement d\'un portfolio moderne avec bot IA intégré et animations avancées.',
-      skills: ['React', 'Tailwind CSS', 'IA Conversationnelle'],
+      icon: FaBriefcase,
+      title: 'Agent commercial',
+      organization: 'INTELCIA',
+      period: '2020 - 2023',
+      description: 'Conseil personnalisé et accueil du client. Gestion des réclamations et des litiges. Analyse des besoins et des attentes des clients. Utilisation des outils CRM, Microsoft Teams et Outlook.',
+      skills: ['Conseil client', 'CRM', 'Microsoft Teams', 'Vente'],
       color: 'from-green-500 to-teal-500'
     },
     {
       type: 'certification',
-      icon: FaCertificate,
-      title: 'Certifications Web',
-      organization: 'Diverses Plateformes',
-      period: '2023',
-      description: 'Validation des compétences en développement web et bonnes pratiques.',
-      skills: ['Responsive Design', 'SEO', 'Accessibility'],
+      icon: FaBriefcase,
+      title: 'Aide cuisinier',
+      organization: 'Hotel Mercure',
+      period: '2019',
+      description: 'Présentation et show-cooking. Préparation des plats et assiettes. Service des tables et nettoyage des espaces communs. Travail en équipe avec le personnel de cuisine et de salle.',
+      skills: ['Cuisine', 'Service', 'Travail d\'équipe', 'Communication'],
       color: 'from-orange-500 to-red-500'
+    },
+    {
+      type: 'project',
+      icon: FaBriefcase,
+      title: 'Auto-Entrepreneur',
+      organization: 'OSP SERVICES',
+      period: '2018',
+      description: 'Nettoyage et intervention à domicile. Gestion des relations clients et suivi des interventions. Connaissance et étude de marché. Création de devis et factures.',
+      skills: ['Entrepreneuriat', 'Gestion client', 'Facturation', 'Étude de marché'],
+      color: 'from-yellow-500 to-orange-500'
     }
   ];
 
@@ -180,16 +190,16 @@ const Experience = () => {
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 text-center hover:border-blue-500/30 transition-all duration-300">
-            <div className="text-4xl font-bold text-blue-400 mb-2">3+</div>
-            <div className="text-gray-300">Années d'apprentissage</div>
+            <div className="text-4xl font-bold text-blue-400 mb-2">1+</div>
+            <div className="text-gray-300">Année à La Plateforme</div>
           </div>
           <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 text-center hover:border-purple-500/30 transition-all duration-300">
-            <div className="text-4xl font-bold text-purple-400 mb-2">15+</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2">7+</div>
             <div className="text-gray-300">Projets réalisés</div>
           </div>
           <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 text-center hover:border-green-500/30 transition-all duration-300">
-            <div className="text-4xl font-bold text-green-400 mb-2">8+</div>
-            <div className="text-gray-300">Technologies maîtrisées</div>
+            <div className="text-4xl font-bold text-green-400 mb-2">5+</div>
+            <div className="text-gray-300">Années d'expérience pro</div>
           </div>
         </div>
       </div>

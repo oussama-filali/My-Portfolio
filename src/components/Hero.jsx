@@ -161,7 +161,7 @@ const Hero = () => {
 
         {/* Social Links */}
         <div className="flex justify-center space-x-6">
-          <a href="https://linkedin.com/in/oussama-halima-filali" target="_blank" rel="noopener noreferrer" 
+          <a href="https://www.linkedin.com/in/halima-filali-oussama-780a32178/" target="_blank" rel="noopener noreferrer" 
              className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 hover:scale-110">
             <FaLinkedin className="text-xl" />
           </a>
@@ -169,7 +169,7 @@ const Hero = () => {
              className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-all duration-300 hover:scale-110">
             <FaGithub className="text-xl" />
           </a>
-          <a href="mailto:oussama.halimafilali@example.com"
+          <a href="mailto:oussama.halimafilali.pro@gmail.com"
              className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-red-600 transition-all duration-300 hover:scale-110">
             <FaEnvelope className="text-xl" />
           </a>

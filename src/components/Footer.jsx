@@ -6,7 +6,7 @@ const Footer = () => {
   const socialLinks = [
     { 
       icon: FaLinkedin, 
-      href: 'https://linkedin.com/in/oussama-halima-filali', 
+      href: 'https://www.linkedin.com/in/halima-filali-oussama-780a32178/', 
       label: 'LinkedIn',
       color: 'hover:text-blue-500' 
     },
@@ -18,7 +18,7 @@ const Footer = () => {
     },
     { 
       icon: FaEnvelope, 
-      href: 'mailto:oussama.halimafilali@example.com', 
+      href: 'mailto:oussama.halimafilali.pro@gmail.com', 
       label: 'Email',
       color: 'hover:text-red-500' 
     }
@@ -63,11 +63,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-2 text-gray-400">
                 <FaEnvelope className="text-purple-400" />
-                <span>oussama.halimafilali@example.com</span>
+                <span>oussama.halimafilali.pro@gmail.com</span>
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-2 text-gray-400">
                 <FaPhone className="text-purple-400" />
-                <span>+33 6 XX XX XX XX</span>
+                <span>Disponible sur demande</span>
               </div>
             </div>
           </div>
