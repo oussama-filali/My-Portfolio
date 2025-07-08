@@ -114,7 +114,7 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 animate-spin-slow"></div>
             <div className="absolute inset-2 rounded-full bg-gray-900 flex items-center justify-center">
               <img 
-                src="/img/IMG_0159.JPG" 
+                src="./img/IMG_0159.JPG" 
                 alt="Oussama Halima-Filali" 
                 className="w-32 h-32 rounded-full object-cover border-2 border-white/20"
               />

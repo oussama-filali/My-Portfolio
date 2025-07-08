@@ -40,7 +40,7 @@ const Header = ({ activeSection, onNavigate }) => {
           <div className="flex items-center space-x-3">
             <div className="header-logo w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center overflow-hidden">
               <img 
-                src="/img/00e8f68f-b2ad-41c3-8bb7-db8e0aca1f70.jpg" 
+                src="./img/favicon.png" 
                 alt="Oussama Halima-Filali Logo" 
                 className="w-full h-full object-cover rounded-lg"
               />

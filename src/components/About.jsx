@@ -72,7 +72,7 @@ const About = () => {
               <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-purple-500/20">
                 <div className="text-center">
                   <img 
-                    src="/img/IMG_3173.JPG" 
+                    src="./img/IMG_3173.JPG" 
                     alt="Oussama au travail" 
                     className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 mx-auto rounded-full object-cover mb-6 border-4 border-purple-500/30 shadow-lg"
                   />

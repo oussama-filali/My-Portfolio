@@ -130,14 +130,14 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 mb-8">
           <h4 className="text-center text-lg font-semibold mb-6 text-purple-400">Technologies que j'utilise</h4>
           <div className="flex flex-wrap justify-center items-center gap-6 opacity-70">
-            <img src="/assets/img/html_1532556.png" alt="HTML" className="h-8 w-8 hover:scale-110 transition-transform" />
-            <img src="/assets/img/css-3_5968242.png" alt="CSS" className="h-8 w-8 hover:scale-110 transition-transform" />
-            <img src="/assets/img/js_5968292.png" alt="JavaScript" className="h-8 w-8 hover:scale-110 transition-transform" />
-            <img src="/assets/img/react.png" alt="React" className="h-8 w-8 hover:scale-110 transition-transform" />
-            <img src="/assets/img/php_5968268.png" alt="PHP" className="h-8 w-8 hover:scale-110 transition-transform" />
-            <img src="/assets/img/sql-server_17525027.png" alt="SQL" className="h-8 w-8 hover:scale-110 transition-transform" />
-            <img src="/assets/img/figma_5968705.png" alt="Figma" className="h-8 w-8 hover:scale-110 transition-transform" />
-            <img src="/assets/img/github_3291695.png" alt="GitHub" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/html_1532556.png" alt="HTML" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/css-3_5968242.png" alt="CSS" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/js_5968292.png" alt="JavaScript" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/react.png" alt="React" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/php_5968268.png" alt="PHP" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/sql-server_17525027.png" alt="SQL" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/figma_5968705.png" alt="Figma" className="h-8 w-8 hover:scale-110 transition-transform" />
+            <img src="./assets/img/github_3291695.png" alt="GitHub" className="h-8 w-8 hover:scale-110 transition-transform" />
           </div>
         </div>
 
