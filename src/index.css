@@ -256,6 +256,167 @@ html {
   }
 }
 
+/* Enhanced Responsive Design */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .hero-description {
+    font-size: 0.875rem !important;
+    padding: 0 1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .hero-buttons > * {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .profile-image {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .project-card {
+    margin: 0.5rem !important;
+  }
+  
+  .experience-card {
+    padding: 1rem !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 768px) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem !important;
+  }
+  
+  .profile-image {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  
+  .hero-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem !important;
+  }
+  
+  .profile-image {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  
+  .container-padding {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px to 1200px) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .hero-title {
+    font-size: 3.5rem !important;
+  }
+  
+  .container-padding {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .hero-title {
+    font-size: 4rem !important;
+  }
+  
+  .container-max-width {
+    max-width: 1400px !important;
+  }
+}
+
+/* Header responsive improvements */
+@media (max-width: 768px) {
+  .header-logo {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  .header-title {
+    font-size: 1rem !important;
+  }
+  
+  .header-subtitle {
+    font-size: 0.75rem !important;
+  }
+  
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(17, 24, 39, 0.98);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(75, 85, 99, 0.3);
+  }
+}
+
+/* Profile image responsive positioning */
+@media (max-width: 768px) {
+  .profile-container {
+    margin-top: 100px !important; /* Espace pour éviter le menu */
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .profile-container {
+    margin-top: 80px !important;
+  }
+}
+
+/* Button responsive styles */
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem !important;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* Dark Mode Enhancements */
 body {
   background: #0f0f0f;

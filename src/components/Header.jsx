@@ -38,12 +38,16 @@ const Header = ({ activeSection, onNavigate }) => {
           
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">O</span>
+            <div className="header-logo w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center overflow-hidden">
+              <img 
+                src="/img/00e8f68f-b2ad-41c3-8bb7-db8e0aca1f70.jpg" 
+                alt="Oussama Halima-Filali Logo" 
+                className="w-full h-full object-cover rounded-lg"
+              />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-white font-bold text-lg">Oussama</h1>
-              <p className="text-gray-400 text-xs">Developer</p>
+              <h1 className="header-title text-white font-bold text-lg">Oussama</h1>
+              <p className="header-subtitle text-gray-400 text-xs">Developer</p>
             </div>
           </div>
 
@@ -75,10 +79,10 @@ const Header = ({ activeSection, onNavigate }) => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+        <div className={`mobile-menu md:hidden transition-all duration-300 overflow-hidden ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="py-4 space-y-2">
+          <div className="py-4 space-y-2 bg-gray-900/98 backdrop-blur-lg border-t border-gray-800/50">
             {menuItems.map((item) => (
               <button
                 key={item.id}

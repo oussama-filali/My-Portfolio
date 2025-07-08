@@ -38,15 +38,15 @@ const About = () => {
   const interests = [
     { icon: FaCode, title: 'Développement', desc: 'Création d\'applications web et mobile innovantes' },
     { icon: FaGraduationCap, title: 'Apprentissage', desc: 'Veille technologique et formation continue' },
-    { icon: FaRocket, title: 'Innovation', desc: 'Exploration de nouvelles technologies et solutions' },
-    { icon: FaHeart, title: 'Passion', desc: 'Amour pour le code et les défis techniques' }
+    { icon: FaRocket, title: 'Innovation', desc: 'Exploration de nouvelles technologies, de nouveaux projets et solutions' },
+    { icon: FaHeart, title: 'Passion', desc: 'Amour pour la création de nouveauté et les défis techniques' }
   ];
 
   return (
     <section 
       ref={aboutRef}
       id="about" 
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 py-20 px-4"
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 py-20 px-4 container-padding"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
@@ -59,7 +59,7 @@ const About = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Image and Info */}
           <div className={`transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
@@ -69,17 +69,17 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-2xl transform rotate-3 blur-sm"></div>
               
               {/* Main Image Container */}
-              <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20">
+              <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-purple-500/20">
                 <div className="text-center">
                   <img 
-                    src="/assets/img/IMG_3173.JPG" 
+                    src="/img/IMG_3173.JPG" 
                     alt="Oussama au travail" 
-                    className="w-64 h-64 mx-auto rounded-full object-cover mb-6 border-4 border-purple-500/30 shadow-lg"
+                    className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 mx-auto rounded-full object-cover mb-6 border-4 border-purple-500/30 shadow-lg"
                   />
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-white">Oussama Halima-Filali</h3>
-                    <p className="text-purple-400 font-medium">Développeur Full-Stack</p>
-                    <p className="text-gray-400">Étudiant en IT • Passionné de technologie</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">Oussama Halima-Filali</h3>
+                    <p className="text-purple-400 font-medium text-sm sm:text-base">Développeur Full-Stack/ Assistant Chef de Projet</p>
+                    <p className="text-gray-400 text-sm sm:text-base">Étudiant en IT • Passionné de technologie</p>
                   </div>
                 </div>
               </div>

@@ -88,10 +88,10 @@ const Hero = () => {
   }, []);
 
   const handleDownloadCV = () => {
-    // Simulate CV download - replace with actual CV file
+    // Télécharger le vrai CV depuis public/img
     const link = document.createElement('a');
-    link.href = '/assets/cv/oussama-cv.pdf'; // Add your CV file path
-    link.download = 'Oussama_Halima_Filali_CV.pdf';
+    link.href = '/img/cv-oussama-halima-filali.pdf';
+    link.download = 'CV_Oussama_Halima_Filali.pdf';
     link.click();
   };
 
@@ -107,14 +107,14 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/50 -z-5"></div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <div className="profile-container relative z-10 text-center text-white px-4 max-w-4xl mx-auto container-padding">
         {/* Profile Image */}
         <div className="mb-8 relative">
-          <div className="w-40 h-40 mx-auto mb-6 relative">
+          <div className="profile-image w-40 h-40 mx-auto mb-6 relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 animate-spin-slow"></div>
             <div className="absolute inset-2 rounded-full bg-gray-900 flex items-center justify-center">
               <img 
-                src="/assets/img/IMG_0159.JPG" 
+                src="/img/IMG_0159.JPG" 
                 alt="Oussama Halima-Filali" 
                 className="w-32 h-32 rounded-full object-cover border-2 border-white/20"
               />
@@ -127,10 +127,10 @@ const Hero = () => {
 
         {/* Typing Animation */}
         <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+          <h1 className="hero-title text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
             Oussama Halima-Filali
           </h1>
-          <div className="text-xl md:text-2xl text-gray-300 mb-2">
+          <div className="hero-subtitle text-xl md:text-2xl text-gray-300 mb-2">
             <span className="typing-animation">Développeur Full-Stack passionné</span>
           </div>
           <div className="text-lg text-gray-400">
@@ -139,13 +139,13 @@ const Hero = () => {
         </div>
 
         {/* Description */}
-        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+        <p className="hero-description text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
           Passionné par l'innovation technologique, je transforme les idées en solutions digitales 
           élégantes et performantes. Découvrez mon univers créatif ! 🚀
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
+        <div className="hero-buttons flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
           <button
             onClick={handleDownloadCV}
             className="group bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"

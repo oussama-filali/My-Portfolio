@@ -19,7 +19,7 @@ const Projects = () => {
       id: 1,
       title: 'Projet Cuisine Up',
       description: 'Projet réalisé avec HTML, CSS et JavaScript pour la création d\'une page de recette de cuisine avec une interface utilisateur interactive (toujours en cours).',
-      image: '/assets/img/cuisineup.gif',
+      image: '/img/cuisineup.gif',
       category: 'web',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/oussama-filali/cuisine-up',
@@ -31,7 +31,7 @@ const Projects = () => {
       id: 2,
       title: 'Premier Portfolio',
       description: 'Premier projet en HTML, CSS et JS pour la création d\'un Portfolio (première expérience en programmation).',
-      image: '/assets/img/porfolio1.gif',
+      image: '/img/porfolio1.gif',
       category: 'web',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/oussama-filali/my-portofolio',
@@ -42,7 +42,7 @@ const Projects = () => {
       id: 3,
       title: 'Site Web de Quiz',
       description: 'Site Web de Quiz créé avec PHP et MySQL pour créer des questions et réponses interactives selon des thèmes spécifiques.',
-      image: '/assets/img/quiz.gif',
+      image: '/img/quiz.gif',
       category: 'fullstack',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
       github: '#',
@@ -53,7 +53,7 @@ const Projects = () => {
       id: 4,
       title: 'Livre d\'Or Digital',
       description: 'Imaginez un site Web de Livre d\'Or où les utilisateurs peuvent ajouter leurs avis ou commentaires sur votre livre d\'or personnalisé avec des images et des vidéos de l\'événement et vous êtes l\'administrateur du site.',
-      image: '/assets/img/livreor.gif',
+      image: '/img/livreor.gif',
       category: 'fullstack',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
       github: '#',
@@ -64,7 +64,7 @@ const Projects = () => {
       id: 5,
       title: 'Gestionnaire de Menu',
       description: 'Petit projet sympathique en PHP et MySQL de gestion menu pour restaurateurs.',
-      image: '/assets/img/gestionmenu.gif',
+      image: '/img/gestionmenu.gif',
       category: 'fullstack',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
       github: '#',
@@ -75,7 +75,7 @@ const Projects = () => {
       id: 6,
       title: 'L\'Artisan Pizzeria',
       description: 'Projet personnel de création d\'un site vitrine pour une pizzeria située à Marseille, avec une interface utilisateur améliorée grâce au framework Bootstrap jQuery.',
-      image: '/assets/img/artisanpizza.gif',
+      image: '/img/artisanpizza.gif',
       category: 'web',
       technologies: ['HTML', 'CSS', 'Bootstrap', 'jQuery'],
       github: 'https://github.com/oussama-filali/L-Artisan-Pizzeria',
@@ -86,7 +86,7 @@ const Projects = () => {
       id: 7,
       title: 'Site La Plateforme',
       description: 'Site web pour l\'école La Plateforme qui propose 3 jours portes ouvertes, avec gestion d\'inscription des élèves avec gestion des dates de présence et administrer avec accord et refus des inscrits selon le nombre de places restant.',
-      image: '/assets/img/laplateforme.gif',
+      image: '/img/laplateforme.gif',
       category: 'fullstack',
       technologies: ['HTML', 'CSS', 'PHP', 'MySQL'],
       github: 'https://github.com/oussama-filali/site-la-plateforme',
@@ -139,34 +139,35 @@ const Projects = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-2">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center space-x-2 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base ${
                 selectedCategory === category.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
                   : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
               }`}
             >
               <span>{category.icon}</span>
-              <span>{category.name}</span>
+              <span className="hidden sm:inline">{category.name}</span>
+              <span className="sm:hidden">{category.name.substring(0, 4)}</span>
             </button>
           ))}
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
               data-project-id={project.id}
-              className={`project-card group relative bg-gray-800/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-purple-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10 ${
+              className={`project-card group relative bg-gray-800/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-purple-500/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10 mx-2 sm:mx-0 ${
                 visibleProjects.has(project.id)
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              } ${project.featured ? 'lg:col-span-2' : ''}`}
+              } ${project.featured ? 'sm:col-span-2 lg:col-span-2' : ''}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Featured Badge */}
