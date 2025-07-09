@@ -90,7 +90,7 @@ const Hero = () => {
   const handleDownloadCV = () => {
     // Télécharger le vrai CV depuis public/img
     const link = document.createElement('a');
-    link.href = '/img/cv-oussama-halima-filali.pdf';
+    link.href = './img/cv-oussama-halima-filali.pdf';
     link.download = 'CV_Oussama_Halima_Filali.pdf';
     link.click();
   };

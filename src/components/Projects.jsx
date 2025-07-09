@@ -4,6 +4,7 @@ import { FaGithub, FaExternalLinkAlt, FaPlay, FaCode, FaEye } from 'react-icons/
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [visibleProjects, setVisibleProjects] = useState(new Set());
+  const [projectClicks, setProjectClicks] = useState({});
   const projectsRef = useRef(null);
 
   const categories = [
@@ -19,85 +20,90 @@ const Projects = () => {
       id: 1,
       title: 'Projet Cuisine Up',
       description: 'Projet réalisé avec HTML, CSS et JavaScript pour la création d\'une page de recette de cuisine avec une interface utilisateur interactive (toujours en cours).',
-      image: '/img/cuisineup.gif',
+      image: './img/cuisineup.gif',
       category: 'web',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/oussama-filali/cuisine-up',
       demo: 'https://oussama-filali.github.io/cuisine-up/',
-      featured: true,
-      stats: { views: '2.5k', stars: 45 }
+      featured: true
     },
     {
       id: 2,
       title: 'Premier Portfolio',
       description: 'Premier projet en HTML, CSS et JS pour la création d\'un Portfolio (première expérience en programmation).',
-      image: '/img/porfolio1.gif',
+      image: './img/porfolio1.gif',
       category: 'web',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/oussama-filali/my-portofolio',
-      demo: 'https://oussama-filali.github.io/my-portofolio/',
-      stats: { views: '1.8k', stars: 32 }
+      demo: 'https://oussama-filali.github.io/my-portofolio/'
     },
     {
       id: 3,
       title: 'Site Web de Quiz',
       description: 'Site Web de Quiz créé avec PHP et MySQL pour créer des questions et réponses interactives selon des thèmes spécifiques.',
-      image: '/img/quiz.gif',
+      image: './img/quiz.gif',
       category: 'fullstack',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
       github: '#',
-      demo: '#',
-      stats: { views: '3.2k', stars: 67 }
+      demo: '#'
     },
     {
       id: 4,
       title: 'Livre d\'Or Digital',
       description: 'Imaginez un site Web de Livre d\'Or où les utilisateurs peuvent ajouter leurs avis ou commentaires sur votre livre d\'or personnalisé avec des images et des vidéos de l\'événement et vous êtes l\'administrateur du site.',
-      image: '/img/livreor.gif',
+      image: './img/livreor.gif',
       category: 'fullstack',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
       github: '#',
-      demo: '#',
-      stats: { views: '2.1k', stars: 28 }
+      demo: '#'
     },
     {
       id: 5,
       title: 'Gestionnaire de Menu',
       description: 'Petit projet sympathique en PHP et MySQL de gestion menu pour restaurateurs.',
-      image: '/img/gestionmenu.gif',
+      image: './img/gestionmenu.gif',
       category: 'fullstack',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
       github: '#',
-      demo: '#',
-      stats: { views: '1.5k', stars: 23 }
+      demo: '#'
     },
     {
       id: 6,
       title: 'L\'Artisan Pizzeria',
       description: 'Projet personnel de création d\'un site vitrine pour une pizzeria située à Marseille, avec une interface utilisateur améliorée grâce au framework Bootstrap jQuery.',
-      image: '/img/artisanpizza.gif',
+      image: './img/artisanpizza.gif',
       category: 'web',
       technologies: ['HTML', 'CSS', 'Bootstrap', 'jQuery'],
       github: 'https://github.com/oussama-filali/L-Artisan-Pizzeria',
-      demo: 'https://oussama-filali.github.io/L-Artisan-Pizzeria/',
-      stats: { views: '1.2k', stars: 19 }
+      demo: 'https://oussama-filali.github.io/L-Artisan-Pizzeria/'
     },
     {
       id: 7,
       title: 'Site La Plateforme',
       description: 'Site web pour l\'école La Plateforme qui propose 3 jours portes ouvertes, avec gestion d\'inscription des élèves avec gestion des dates de présence et administrer avec accord et refus des inscrits selon le nombre de places restant.',
-      image: '/img/laplateforme.gif',
+      image: './img/laplateforme.gif',
       category: 'fullstack',
       technologies: ['HTML', 'CSS', 'PHP', 'MySQL'],
       github: 'https://github.com/oussama-filali/site-la-plateforme',
-      demo: 'https://github.com/oussama-filali/site-la-plateforme',
-      stats: { views: '2.8k', stars: 41 }
+      demo: 'https://github.com/oussama-filali/site-la-plateforme'
     }
   ];
 
   const filteredProjects = selectedCategory === 'all' 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
+
+  // Fonction pour gérer les clics sur les projets
+  const handleProjectClick = (projectId, type) => {
+    setProjectClicks(prev => ({
+      ...prev,
+      [projectId]: {
+        ...prev[projectId],
+        [type]: (prev[projectId]?.[type] || 0) + 1,
+        total: (prev[projectId]?.total || 0) + 1
+      }
+    }));
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -207,20 +213,16 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-6">
-                {/* Title & Stats */}
+                {/* Title & Real Stats */}
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
                     {project.title}
                   </h3>
-                  <div className="flex items-center space-x-2 text-xs text-gray-400">
-                    <span className="flex items-center">
-                      <FaEye className="mr-1" />
-                      {project.stats.views}
-                    </span>
-                    <span className="flex items-center">
-                      ⭐ {project.stats.stars}
-                    </span>
-                  </div>
+                  {projectClicks[project.id]?.total > 0 && (
+                    <div className="text-xs text-purple-400 bg-purple-900/30 px-2 py-1 rounded">
+                      {projectClicks[project.id].total} clics
+                    </div>
+                  )}
                 </div>
 
                 {/* Description */}
@@ -246,6 +248,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => handleProjectClick(project.id, 'github')}
                     className="flex-1 bg-gray-700/50 hover:bg-gray-600/50 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-center space-x-2"
                   >
                     <FaGithub />
@@ -255,6 +258,7 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => handleProjectClick(project.id, 'demo')}
                     className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-all flex items-center justify-center space-x-2"
                   >
                     <FaExternalLinkAlt />

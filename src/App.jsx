@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import BotAssistant from './components/BotAssistant';
+import CompactFeedback from './components/CompactFeedback';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -93,6 +94,9 @@ function App() {
 
       {/* Bot Assistant */}
       <BotAssistant onNavigate={handleNavigate} />
+
+      {/* Compact Feedback */}
+      <CompactFeedback />
 
       {/* Background Effects */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
