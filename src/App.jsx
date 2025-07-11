@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import BotAssistant from './components/BotAssistant';
 import CompactFeedback from './components/CompactFeedback';
+import VisitTracker from './components/VisitTracker';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -59,10 +60,10 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-white text-xl font-medium mb-2">Chargement de l'univers...</h2>
+          <div className="w-16 h-16 mx-auto mb-4 border-4 rounded-full border-purple-500/30 border-t-purple-500 animate-spin"></div>
+          <h2 className="mb-2 text-xl font-medium text-white">Chargement de l'univers...</h2>
           <p className="text-gray-400">Préparation de l'expérience galactique</p>
         </div>
       </div>
@@ -70,7 +71,7 @@ function App() {
   }
 
   return (
-    <div className="App relative min-h-screen bg-gray-900 overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden bg-gray-900 App">
       {/* Header Navigation */}
       <Header activeSection={activeSection} onNavigate={handleNavigate} />
 
@@ -99,20 +100,23 @@ function App() {
       <CompactFeedback />
 
       {/* Background Effects */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-cyan-600/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="fixed top-0 left-0 z-0 w-full h-full pointer-events-none">
+        <div className="absolute rounded-full top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 blur-3xl animate-pulse"></div>
+        <div className="absolute rounded-full bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 blur-3xl animate-pulse"></div>
+        <div className="absolute w-64 h-64 rounded-full top-3/4 left-1/3 bg-cyan-600/10 blur-3xl animate-pulse"></div>
       </div>
 
       {/* Scroll to Top Button */}
       <button
         onClick={() => handleNavigate('hero')}
-        className="fixed bottom-24 left-6 w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 z-40"
+        className="fixed z-40 flex items-center justify-center w-12 h-12 text-white transition-all duration-300 rounded-full bottom-24 left-6 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 hover:scale-110"
         aria-label="Retour en haut"
       >
         ↑
       </button>
+
+      {/* Tracker de visites */}
+      <VisitTracker />
     </div>
   );
 }

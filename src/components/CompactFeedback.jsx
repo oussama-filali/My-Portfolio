@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaStar, FaHeart, FaPaperPlane, FaTimes } from 'react-icons/fa';
+import PortfolioAPI from '../services/api';
 
 const CompactFeedback = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -7,19 +8,38 @@ const CompactFeedback = () => {
   const [comment, setComment] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = () => {
-    if (rating > 0) {
-      // Ici vous pourriez envoyer les données
-      console.log({ rating, comment, email, timestamp: new Date() });
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsExpanded(false);
-        setIsSubmitted(false);
-        setRating(0);
-        setComment('');
-        setEmail('');
-      }, 3000);
+  const handleSubmit = async () => {
+    if (rating > 0 && !isLoading) {
+      setIsLoading(true);
+      
+      try {
+        const result = await PortfolioAPI.submitFeedback(rating, comment, email);
+        
+        if (result.success) {
+          setIsSubmitted(true);
+          setMessage(result.message || 'Merci pour votre avis ! 🙏');
+          
+          setTimeout(() => {
+            setIsExpanded(false);
+            setIsSubmitted(false);
+            setRating(0);
+            setComment('');
+            setEmail('');
+            setMessage('');
+          }, 3000);
+        } else {
+          setMessage(result.error || 'Erreur lors de l\'envoi');
+          setTimeout(() => setMessage(''), 3000);
+        }
+      } catch (error) {
+        setMessage('Erreur de connexion');
+        setTimeout(() => setMessage(''), 3000);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -112,12 +132,18 @@ const CompactFeedback = () => {
               {/* Submit */}
               <button
                 onClick={handleSubmit}
-                disabled={rating === 0}
+                disabled={rating === 0 || isLoading}
                 className="w-full bg-gradient-to-r from-pink-500/80 to-purple-500/80 backdrop-blur-sm text-white py-2 rounded font-medium hover:from-pink-500 hover:to-purple-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-1 border border-white/20 text-xs"
               >
                 <FaPaperPlane className="text-xs" />
-                <span>Envoyer</span>
+                <span>{isLoading ? 'Envoi...' : 'Envoyer'}</span>
               </button>
+
+              {message && (
+                <p className={`text-xs text-center ${message.includes('Erreur') ? 'text-red-400' : 'text-green-400'}`}>
+                  {message}
+                </p>
+              )}
 
               <p className="text-white/60 text-xs text-center">
                 Merci ! 🙏
