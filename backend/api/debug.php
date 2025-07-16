@@ -19,7 +19,7 @@ echo "PDO MySQL disponible : " . (extension_loaded('pdo_mysql') ? 'OUI' : 'NON')
 echo "MySQLi disponible : " . (extension_loaded('mysqli') ? 'OUI' : 'NON') . "<br>";
 echo "<hr>";
 
-// 3. Test du fichier de config
+// 3. Test du fichier de configuration database
 echo "<h2>3. Configuration Database</h2>";
 $config_path = '../config/database.php';
 if (file_exists($config_path)) {
